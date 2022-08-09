@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Dotfiles (or .files), are files whose filename starts with a dot
+The dotfiles (or .files), are files whose filename starts with a dot
 (`.`). They are user specific application configuration files stored in
 plain text.
 
