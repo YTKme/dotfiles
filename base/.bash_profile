@@ -2,9 +2,15 @@
 # General #
 ###########
 
+# .bashrc
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
+
 # Alias
-alias ll="ls -l"
-alias glg="git log --all --oneline --graph"
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
 
 ###########
 # Windows #
