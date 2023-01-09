@@ -11,3 +11,6 @@ plain text.
 * [Dotfiles (archlinux)](https://wiki.archlinux.org/title/Dotfiles)
 * [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
 * [Dotfiles (MIT)](https://missing.csail.mit.edu/2019/dotfiles/)
+
+### macOS
+* [Reset the DNS cache in OS X](https://support.apple.com/en-us/HT202516)
