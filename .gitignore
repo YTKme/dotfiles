@@ -14,11 +14,12 @@
 !README.md
 
 # Base
-!base/.bash_aliases
-!base/.bash_profile
-!base/.gitconfig
-!base/.netrc
-!base/.vimrc
+!unix/base/.config/pip/pip.conf
+!unix/base/.bash_aliases
+!unix/base/.bash_profile
+!unix/base/.gitconfig
+!unix/base/.netrc
+!unix/base/.vimrc
 
 # Base pip
 !base/.config/pip/pip.conf
