@@ -33,6 +33,9 @@
 # Visual Studio Code
 !visual-studio-code/
 
+# Windows
+!windows/base/WindowsPowerShell/Profile.ps1
+
 #########
 # macOS #
 #########
