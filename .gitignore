@@ -18,6 +18,7 @@
 !unix/base/.bash_aliases
 !unix/base/.bash_profile
 !unix/base/.bash_prompt
+!unix/base/.bashrc
 !unix/base/.gitconfig
 !unix/base/.netrc
 !unix/base/.vimrc
