@@ -5,21 +5,21 @@
 
 # Windows Subsystem for Linux (WSL)
 # .bashrc
-# BASHRC_PATH="$HOME/.bashrc"
-# if [ -f "$BASHRC_PATH" ]; then
-#     source "$BASHRC_PATH"
+# BASHRC_PATH="${HOME}/.bashrc"
+# if [ -f "${BASHRC_PATH}" ]; then
+#     source "${BASHRC_PATH}"
 # fi
 
 # Prompt
-BASH_PROMPT_PATH="$HOME/.bash_prompt"
-if [ -f "$BASH_PROMPT_PATH" ]; then
-    source "$BASH_PROMPT_PATH"
+BASH_PROMPT_PATH="${HOME}/.bash_prompt"
+if [ -f "${BASH_PROMPT_PATH}" ]; then
+    source "${BASH_PROMPT_PATH}"
 fi
 
 # Alias
-BASH_ALIASES_PATH="$HOME/.bash_aliases"
-if [ -f "$BASH_ALIASES_PATH" ]; then
-    source "$BASH_ALIASES_PATH"
+BASH_ALIASES_PATH="${HOME}/.bash_aliases"
+if [ -f "${BASH_ALIASES_PATH}" ]; then
+    source "${BASH_ALIASES_PATH}"
 fi
 
 ###########
@@ -30,7 +30,7 @@ fi
 # Generate Bourne shell commands on stdout
 # Start `ssh-agent` and redirect `stdout` to null
 
-# if [ -z "$SSH_AUTH_SOCK" ] ; then
+# if [ -z "${SSH_AUTH_SOCK}" ] ; then
 #     eval $(ssh-agent -s) > /dev/null
 #     #eval `keychain --eval --quick --quiet id_rsa id_ed25519`
 #     #eval $(ssh-agent -s) 1> /dev/null
