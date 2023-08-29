@@ -14,14 +14,14 @@
 !README.md
 
 # Base
-!unix/base/.config/pip/pip.conf
-!unix/base/.bash_aliases
-!unix/base/.bash_profile
-!unix/base/.bash_prompt
-!unix/base/.bashrc
-!unix/base/.gitconfig
-!unix/base/.netrc
-!unix/base/.vimrc
+!unix/home/.config/pip/pip.conf
+!unix/home/.bash_aliases
+!unix/home/.bash_profile
+!unix/home/.bash_prompt
+!unix/home/.bashrc
+!unix/home/.gitconfig
+!unix/home/.netrc
+!unix/home/.vimrc
 
 # etc
 # nginx
