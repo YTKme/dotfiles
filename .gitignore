@@ -14,18 +14,20 @@
 !README.md
 
 # Base
-!unix/base/.config/pip/pip.conf
-!unix/base/.bash_aliases
-!unix/base/.bash_profile
-!unix/base/.bash_prompt
-!unix/base/.bashrc
-!unix/base/.gitconfig
-!unix/base/.netrc
-!unix/base/.vimrc
+!unix/home/.config/pip/pip.conf
+!unix/home/.bash_aliases
+!unix/home/.bash_profile
+!unix/home/.bash_prompt
+!unix/home/.bashrc
+!unix/home/.gitconfig
+!unix/home/.netrc
+!unix/home/.vimrc
 
 # etc
 # nginx
-!unix/etc/nginx/conf.d/localhost-lcl
+!unix/etc/nginx/nginx.conf
+!unix/etc/nginx/conf.d/localhost-lcl.conf
+!unix/etc/nginx/sites-available/localhost-lcl
 # nginx-default
 !unix/etc/nginx-default/fastcgi.conf
 !unix/etc/nginx-default/fastcgi_params
@@ -37,10 +39,12 @@
 !unix/etc/nginx-default/scgi_params
 !unix/etc/nginx-default/uwsgi_params
 !unix/etc/nginx-default/win-utf
+!unix/etc/nginx-default/conf.d/default.conf
 !unix/etc/nginx-default/sites-available/default
 !unix/etc/nginx-default/snippets/fastcgi-php.conf
 !unix/etc/nginx-default/snippets/snakeoil.conf
-
+# ssl
+!unix/etc/ssl/openssl.cnf
 
 # Base pip
 !base/.config/pip/pip.conf
@@ -52,7 +56,7 @@
 !mplayer/
 
 # Visual Studio Code
-!visual-studio-code/
+!visual-studio-code/settings.json
 
 # Windows
 !windows/base/WindowsPowerShell/Profile.ps1
