@@ -2,7 +2,6 @@
 # General #
 ###########
 
-
 # Windows Subsystem for Linux (WSL)
 # .bashrc
 # BASHRC_PATH="${HOME}/.bashrc"
