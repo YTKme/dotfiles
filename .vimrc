@@ -3,7 +3,7 @@ set nocompatible " Use Vim settings rather than Vi settings
 " make Vim behave in a more useful way.
 
 " Enable Syntax Highlighting
-syntax on
+"syntax on
 
 " Show Current Mode
 set showmode
@@ -12,7 +12,7 @@ set title
 " Display Line Number
 set number
 " Highlight Current Line
-set cursorline
+"set cursorline
 " Highlight Search
 set hlsearch
 " Show Cursor Position
