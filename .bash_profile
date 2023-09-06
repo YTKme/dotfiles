@@ -2,13 +2,6 @@
 # General #
 ###########
 
-# Windows Subsystem for Linux (WSL)
-# .bashrc
-# BASHRC_PATH="${HOME}/.bashrc"
-# if [ -f "${BASHRC_PATH}" ]; then
-#     source "${BASHRC_PATH}"
-# fi
-
 # Prompt
 BASH_PROMPT_PATH="${HOME}/.bash_prompt"
 if [ -f "${BASH_PROMPT_PATH}" ]; then
@@ -19,6 +12,15 @@ fi
 BASH_ALIASES_PATH="${HOME}/.bash_aliases"
 if [ -f "${BASH_ALIASES_PATH}" ]; then
     source "${BASH_ALIASES_PATH}"
+fi
+
+# Enable Bash Completion
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 
 ###########
