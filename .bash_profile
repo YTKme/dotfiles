@@ -14,7 +14,7 @@ if [ -f "${BASH_ALIASES_PATH}" ]; then
     source "${BASH_ALIASES_PATH}"
 fi
 
-# Enable Bash Completion
+# Enable BASH Completion
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
@@ -23,19 +23,19 @@ if ! shopt -oq posix; then
     fi
 fi
 
-###########
-# Windows #
-###########
-
 # Check if `ssh-agent` process already running, remove them
 # Generate Bourne shell commands on stdout
 # Start `ssh-agent` and redirect `stdout` to null
 
 # if [ -z "${SSH_AUTH_SOCK}" ] ; then
-#     eval $(ssh-agent -s) > /dev/null
+#     eval "$(ssh-agent -s)" > /dev/null
 #     #eval `keychain --eval --quick --quiet id_rsa id_ed25519`
-#     #eval $(ssh-agent -s) 1> /dev/null
+#     #eval "$(ssh-agent -s)" 1> /dev/null
 # fi
+
+###########
+# Windows #
+###########
 
 # SSH_AGENT_COMMAND="ssh-agent"
 # if [ -z "$(pgrep ssh-agent)" ]; then
