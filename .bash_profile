@@ -9,9 +9,9 @@ if [ -f "${BASH_PROMPT_PATH}" ]; then
 fi
 
 # Alias
-BASH_ALIASES_PATH="${HOME}/.bash_aliases"
-if [ -f "${BASH_ALIASES_PATH}" ]; then
-    source "${BASH_ALIASES_PATH}"
+ALIASES_PATH="${HOME}/.aliases"
+if [ -f "${ALIASES_PATH}" ]; then
+    source "${ALIASES_PATH}"
 fi
 
 # Enable BASH Completion
