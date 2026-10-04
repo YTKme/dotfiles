@@ -26,10 +26,8 @@ if (( ! $+functions[__git_ps1] )); then
     return 1
 fi
 
-zmodload zsh/terminfo || return 1
-
 # Reset
-RESET="${terminfo[sgr0]}"
+RESET=$'\e[0m'
 
 # Foreground
 FOREGROUND_BLACK="${(%):-"%F{black}"}"
@@ -56,12 +54,12 @@ BACKGROUND_WHITE="${(%):-"%K{white}"}"
 : "${(%):-"%f%k"}"
 
 # Style
-STYLE_BOLD="${terminfo[bold]}"
-STYLE_DIM="${terminfo[dim]}"
-STYLE_UNDERLINED="${terminfo[smul]}"
-STYLE_BLINK="${terminfo[blink]}"
-STYLE_REVERSE="${terminfo[rev]}"
-STYLE_HIDDEN="${terminfo[invis]}"
+STYLE_BOLD=$'\e[1m'
+STYLE_DIM=$'\e[2m'
+STYLE_UNDERLINED=$'\e[4m'
+STYLE_BLINK=$'\e[5m'
+STYLE_REVERSE=$'\e[7m'
+STYLE_HIDDEN=$'\e[8m'
 STYLE_DEFAULT=$'\e[22m'
 
 # Prompt
