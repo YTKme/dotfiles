@@ -13,7 +13,7 @@ if [ -f "${GIT_COMPLETION_PATH}" ] && [ -r "${GIT_COMPLETION_PATH}" ]; then
 fi
 
 # Prompt
-ZSH_PROMPT_PATH="${HOME}/.zsh_prompt"
+ZSH_PROMPT_PATH="${HOME}/.zprompt"
 if [ -f "${ZSH_PROMPT_PATH}" ] && [ -r "${ZSH_PROMPT_PATH}" ]; then
   source "${ZSH_PROMPT_PATH}"
 fi

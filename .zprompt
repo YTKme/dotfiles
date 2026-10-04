@@ -21,11 +21,11 @@ GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWCOLORHINTS="yes"
 # GIT_PS1_HIDE_IF_PWD_IGNORED="yes"
 
-# if (( ! $+functions[__git_ps1] )); then
-#   print -u2 -- "The __git_ps1 command is not found."
-#   print -u2 -- "Need to source git-prompt.sh before using prompt."
-#   return 1
-# fi
+if (( ! $+functions[__git_ps1] )); then
+  print -u2 -- "The __git_ps1 command is not found."
+  print -u2 -- "Need to source git-prompt.sh for Git support and information."
+  # return 1
+fi
 
 # Reset
 RESET=$'\e[0m'
