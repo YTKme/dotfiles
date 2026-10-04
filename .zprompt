@@ -65,19 +65,24 @@ STYLE_HIDDEN="${terminfo[invis]}"
 STYLE_DEFAULT=$'\e[22m'
 
 # Prompt
+PROMPT_PREFIX="%{${FOREGROUND_GREEN}%}%n" # username
+PROMPT_PREFIX+="%{${FOREGROUND_WHITE}%} at "
+PROMPT_PREFIX+="%{${FOREGROUND_GREEN}%}%m" # hostname
+PROMPT_PREFIX+="%{${FOREGROUND_WHITE}%} in "
+PROMPT_PREFIX+="%{${FOREGROUND_CYAN}%}%1~" # basename
 
-PS1="%{${FOREGROUND_GREEN}%}%n" # username
-PS1+="%{${FOREGROUND_WHITE}%} at "
-PS1+="%{${FOREGROUND_GREEN}%}%m" # hostname
-PS1+="%{${FOREGROUND_WHITE}%} in "
-PS1+="%{${FOREGROUND_CYAN}%}%1~" # basename
-PS1+="\$(__git_ps1 '%%{${FOREGROUND_WHITE}%%} on %%{${RESET}%%}(%s)')"
-PS1+="\n"
-PS1+="%{${FOREGROUND_WHITE}%}%# %{${RESET}%}" # prompt symbol
+PROMPT_SUFFIX=$'\n'
+PROMPT_SUFFIX+="%{${FOREGROUND_WHITE}%}%# %{${RESET}%}"
 
-function prompt_command() {
-    export PS1
+GIT_PROMPT="%%{${FOREGROUND_WHITE}%%} on %%{${RESET}%%}(%s)"
+
+prompt_command() {
+    __git_ps1 "$PROMPT_PREFIX" "$PROMPT_SUFFIX" "$GIT_PROMPT"
 }
 
+typeset -ga precmd_functions
+if (( ! ${precmd_functions[(Ie)prompt_command]} )); then
+    precmd_functions+=(prompt_command)
+fi
+
 PS2="%{${FOREGROUND_GREEN}%}> %{${RESET}%}"
-export PS2
