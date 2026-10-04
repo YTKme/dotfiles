@@ -56,7 +56,11 @@ PS1+="\[${FOREGROUND_GREEN}\]\h" # hostname
 PS1+="\[${FOREGROUND_WHITE}\] in "
 PS1+="\[${FOREGROUND_CYAN}\]\W" # basename
 # PS1+="\$(__git_ps1 '\[${FOREGROUND_WHITE}\] on \[${FOREGROUND_CYAN}\]%s') "
-PS1+="\$(__git_ps1 '\[${FOREGROUND_WHITE}\] on \[${RESET}\](%s)') "
+PS1+="\$(
+  if declare -F __git_ps1 >/dev/null; then
+    __git_ps1 '\[${FOREGROUND_WHITE}\] on \[${RESET}\](%s)'
+  fi
+) "
 PS1+="\n"
 PS1+="\[${FOREGROUND_WHITE}\]\$ \[${RESET}\]"
 # PS1+="\[${FOREGROUND_WHITE}\]# \[${RESET}\]"
