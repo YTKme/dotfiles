@@ -1,0 +1,83 @@
+###########
+# General #
+###########
+
+# Check Color Terminal
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes ;;
+esac
+
+# Git
+# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE="yes"
+GIT_PS1_SHOWSTASHSTATE="yes"
+GIT_PS1_SHOWUNTRACKEDFILES="yes"
+GIT_PS1_SHOWUPSTREAM="auto verbose"
+# GIT_PS1_STATESEPARATOR=" "
+# GIT_PS1_COMPRESSSPARSESTATE="yes"
+# GIT_PS1_OMITSPARSESTATE="yes"
+GIT_PS1_SHOWCONFLICTSTATE="yes"
+GIT_PS1_DESCRIBE_STYLE="branch"
+GIT_PS1_SHOWCOLORHINTS="yes"
+# GIT_PS1_HIDE_IF_PWD_IGNORED="yes"
+
+if (( ! $+functions[__git_ps1] )); then
+    print -u2 -- "Source Git's git-prompt.sh before this prompt file."
+    return 1
+fi
+
+zmodload zsh/terminfo || return 1
+
+# Reset
+RESET="${terminfo[sgr0]}"
+
+# Foreground
+FOREGROUND_BLACK="${(%):-"%F{black}"}"
+FOREGROUND_RED="${(%):-"%F{red}"}"
+FOREGROUND_GREEN="${(%):-"%F{green}"}"
+FOREGROUND_YELLOW="${(%):-"%F{yellow}"}"
+FOREGROUND_BLUE="${(%):-"%F{blue}"}"
+FOREGROUND_MAGENTA="${(%):-"%F{magenta}"}"
+FOREGROUND_CYAN="${(%):-"%F{cyan}"}"
+FOREGROUND_WHITE="${(%):-"%F{white}"}"
+
+# Background
+BACKGROUND_BLACK="${(%):-"%K{black}"}"
+BACKGROUND_RED="${(%):-"%K{red}"}"
+BACKGROUND_GREEN="${(%):-"%K{green}"}"
+BACKGROUND_YELLOW="${(%):-"%K{yellow}"}"
+BACKGROUND_BLUE="${(%):-"%K{blue}"}"
+BACKGROUND_MAGENTA="${(%):-"%K{magenta}"}"
+BACKGROUND_CYAN="${(%):-"%K{cyan}"}"
+BACKGROUND_WHITE="${(%):-"%K{white}"}"
+
+# Restore Tracked Color Without Printing Anything
+# Fix Flash in Terminal
+: "${(%):-"%f%k"}"
+
+# Style
+STYLE_BOLD="${terminfo[bold]}"
+STYLE_DIM="${terminfo[dim]}"
+STYLE_UNDERLINED="${terminfo[smul]}"
+STYLE_BLINK="${terminfo[blink]}"
+STYLE_REVERSE="${terminfo[rev]}"
+STYLE_HIDDEN="${terminfo[invis]}"
+STYLE_DEFAULT=$'\e[22m'
+
+# Prompt
+
+PS1="%{${FOREGROUND_GREEN}%}%n" # username
+PS1+="%{${FOREGROUND_WHITE}%} at "
+PS1+="%{${FOREGROUND_GREEN}%}%m" # hostname
+PS1+="%{${FOREGROUND_WHITE}%} in "
+PS1+="%{${FOREGROUND_CYAN}%}%1~" # basename
+PS1+="\$(__git_ps1 '%%{${FOREGROUND_WHITE}%%} on %%{${RESET}%%}(%s)')"
+PS1+="\n"
+PS1+="%{${FOREGROUND_WHITE}%}%# %{${RESET}%}" # prompt symbol
+
+function prompt_command() {
+    export PS1
+}
+
+PS2="%{${FOREGROUND_GREEN}%}> %{${RESET}%}"
+export PS2
