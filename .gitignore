@@ -1,2 +1,40 @@
-# Ignore All
+##############
+# Ignore All #
+##############
 *
+
+#############
+# Exception #
+#############
+
+# Configuration
+!.config/
+
+# Shell
+!.prompt
+!.aliases
+!.profile
+
+# BASH
+!.bash_aliases
+!.bash_profile
+!.bash_prompt
+!.bash_prompt_root
+!.bashrc
+
+# Z Shell
+!.zprofile
+!.zprompt
+!.zsh_prompt
+!.zshenv
+!.zshrc
+
+# Miscellaneous
+!.gitignore
+!.netrc
+!.npm_completion
+!.npmrc
+!.pypirc
+!.vimrc
+!LICENSE
+!README.md

@@ -1,0 +1,87 @@
+###########
+# General #
+###########
+
+# Check Color Terminal
+case "$TERM" in
+  xterm-color|*-256color) color_prompt=yes ;;
+esac
+
+# Git
+# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE="yes"
+GIT_PS1_SHOWSTASHSTATE="yes"
+GIT_PS1_SHOWUNTRACKEDFILES="yes"
+GIT_PS1_SHOWUPSTREAM="auto verbose"
+# GIT_PS1_STATESEPARATOR=" "
+# GIT_PS1_COMPRESSSPARSESTATE="yes"
+# GIT_PS1_OMITSPARSESTATE="yes"
+GIT_PS1_SHOWCONFLICTSTATE="yes"
+GIT_PS1_DESCRIBE_STYLE="branch"
+GIT_PS1_SHOWCOLORHINTS="yes"
+# GIT_PS1_HIDE_IF_PWD_IGNORED="yes"
+
+if (( ! $+functions[__git_ps1] )); then
+  print -u2 -- "The __git_ps1 command is not found."
+  print -u2 -- "Need to source git-prompt.sh for Git support and information."
+  # return 1
+fi
+
+# Reset
+RESET=$'\e[0m'
+
+# Foreground
+FOREGROUND_BLACK="${(%):-"%F{black}"}"
+FOREGROUND_RED="${(%):-"%F{red}"}"
+FOREGROUND_GREEN="${(%):-"%F{green}"}"
+FOREGROUND_YELLOW="${(%):-"%F{yellow}"}"
+FOREGROUND_BLUE="${(%):-"%F{blue}"}"
+FOREGROUND_MAGENTA="${(%):-"%F{magenta}"}"
+FOREGROUND_CYAN="${(%):-"%F{cyan}"}"
+FOREGROUND_WHITE="${(%):-"%F{white}"}"
+
+# Background
+BACKGROUND_BLACK="${(%):-"%K{black}"}"
+BACKGROUND_RED="${(%):-"%K{red}"}"
+BACKGROUND_GREEN="${(%):-"%K{green}"}"
+BACKGROUND_YELLOW="${(%):-"%K{yellow}"}"
+BACKGROUND_BLUE="${(%):-"%K{blue}"}"
+BACKGROUND_MAGENTA="${(%):-"%K{magenta}"}"
+BACKGROUND_CYAN="${(%):-"%K{cyan}"}"
+BACKGROUND_WHITE="${(%):-"%K{white}"}"
+
+# Restore Tracked Color Without Printing Anything
+# Fix Flash in Terminal
+: "${(%):-"%f%k"}"
+
+# Style
+STYLE_BOLD=$'\e[1m'
+STYLE_DIM=$'\e[2m'
+STYLE_UNDERLINED=$'\e[4m'
+STYLE_BLINK=$'\e[5m'
+STYLE_REVERSE=$'\e[7m'
+STYLE_HIDDEN=$'\e[8m'
+STYLE_DEFAULT=$'\e[22m'
+
+# Prompt
+PROMPT_PREFIX="%{${FOREGROUND_GREEN}%}%n" # username
+PROMPT_PREFIX+="%{${FOREGROUND_WHITE}%} at "
+PROMPT_PREFIX+="%{${FOREGROUND_GREEN}%}%m" # hostname
+PROMPT_PREFIX+="%{${FOREGROUND_WHITE}%} in "
+PROMPT_PREFIX+="%{${FOREGROUND_CYAN}%}%1~" # basename
+
+PROMPT_SUFFIX=$'\n'
+PROMPT_SUFFIX+="%{${FOREGROUND_WHITE}%}%# %{${RESET}%}"
+
+GIT_PROMPT="%%{${FOREGROUND_WHITE}%%} on %%{${RESET}%%}(%s)"
+
+prompt_command() {
+  __git_ps1 "$PROMPT_PREFIX" "$PROMPT_SUFFIX" "$GIT_PROMPT"
+}
+
+typeset -ga precmd_functions
+if (( ! ${precmd_functions[(Ie)prompt_command]} )); then
+  precmd_functions+=(prompt_command)
+fi
+
+PS2="%{${FOREGROUND_GREEN}%}> %{${RESET}%}"
