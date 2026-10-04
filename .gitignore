@@ -11,6 +11,7 @@
 !.config/
 
 # Shell
+!.prompt
 !.aliases
 !.profile
 
@@ -22,6 +23,10 @@
 !.bashrc
 
 # Z Shell
+!.zprofile
+!.zprompt
+!.zsh_prompt
+!.zshenv
 !.zshrc
 
 # Miscellaneous
