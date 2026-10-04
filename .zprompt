@@ -4,7 +4,7 @@
 
 # Check Color Terminal
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes ;;
+  xterm-color|*-256color) color_prompt=yes ;;
 esac
 
 # Git
@@ -21,10 +21,11 @@ GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWCOLORHINTS="yes"
 # GIT_PS1_HIDE_IF_PWD_IGNORED="yes"
 
-if (( ! $+functions[__git_ps1] )); then
-    print -u2 -- "Source Git's git-prompt.sh before this prompt file."
-    return 1
-fi
+# if (( ! $+functions[__git_ps1] )); then
+#   print -u2 -- "The __git_ps1 command is not found."
+#   print -u2 -- "Need to source git-prompt.sh before using prompt."
+#   return 1
+# fi
 
 # Reset
 RESET=$'\e[0m'
@@ -75,12 +76,12 @@ PROMPT_SUFFIX+="%{${FOREGROUND_WHITE}%}%# %{${RESET}%}"
 GIT_PROMPT="%%{${FOREGROUND_WHITE}%%} on %%{${RESET}%%}(%s)"
 
 prompt_command() {
-    __git_ps1 "$PROMPT_PREFIX" "$PROMPT_SUFFIX" "$GIT_PROMPT"
+  __git_ps1 "$PROMPT_PREFIX" "$PROMPT_SUFFIX" "$GIT_PROMPT"
 }
 
 typeset -ga precmd_functions
 if (( ! ${precmd_functions[(Ie)prompt_command]} )); then
-    precmd_functions+=(prompt_command)
+  precmd_functions+=(prompt_command)
 fi
 
 PS2="%{${FOREGROUND_GREEN}%}> %{${RESET}%}"

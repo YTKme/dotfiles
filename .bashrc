@@ -2,17 +2,8 @@
 # General #
 ###########
 
-# Enable BASH Completion
-if ! shopt -oq posix; then
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
-    fi
-fi
-
-# .profile
-PROFILE_PATH="${HOME}/.profile"
-if [ -f "${PROFILE_PATH}" ]; then
-    source "${PROFILE_PATH}"
+# Profile
+PROFILE_PATH="${HOME}/.bash_profile"
+if [ -f "${PROFILE_PATH}" ] && [ -r "${PROFILE_PATH}" ]; then
+  source "${PROFILE_PATH}"
 fi
