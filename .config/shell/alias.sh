@@ -19,6 +19,8 @@ alias git-remote-prune-origin="git remote prune origin"
 # Prune Tag(s)
 alias gfpt="git fetch --prune --prune-tags"
 alias git-fetch-prune-tags="git fetch --prune --prune-tags"
+# Git Configuration
+# alias gcme='git config core.fileMode false && git config user.email "email@example.com" && git config user.name "Your Name"'
 
 # *nix
 # alias flushdns="sudo systemd-resolve --flush-caches"
@@ -26,3 +28,8 @@ alias git-fetch-prune-tags="git fetch --prune --prune-tags"
 
 # macOS
 # alias flushdns="sudo killall -HUP mDNSResponder"
+
+# uv
+# alias uvbumppatchdev="uv version --bump patch --bump dev=$(date +%Y%m%d)"
+# Create Tag(s) uv
+# gtuvvs () { git tag "$(uv version --short)"; }
