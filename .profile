@@ -1,13 +1,7 @@
-###########
-# General #
-###########
-
-# History
-HISTSIZE=50000
-SAVEHIST=50000
-
-# Alias
-ALIASES_PATH="${HOME}/.aliases"
-if [ -f "${ALIASES_PATH}" ] && [ -r "${ALIASES_PATH}" ]; then
-  source "${ALIASES_PATH}"
+# BASH
+if [ -n "$BASH_VERSION" ]; then
+  # Load .bashrc
+  if [ -f "${HOME}/.bashrc" ] && [ -r "${HOME}/.bashrc" ]; then
+    source "${HOME}/.bashrc"
+  fi
 fi

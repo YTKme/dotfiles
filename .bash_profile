@@ -1,26 +1,12 @@
-###########
-# General #
-###########
-
-# Completion Linux
-if ! shopt -oq posix; then
-  if [ -r /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -r /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+# Environment
+ENVIRONMENT_PATH="${HOME}/.config/shell/env.sh"
+if [ -f "${ENVIRONMENT_PATH}" ] && [ -r "${ENVIRONMENT_PATH}" ]; then
+  source "${ENVIRONMENT_PATH}"
 fi
 
-# Prompt
-BASH_PROMPT_PATH="${HOME}/.bash_prompt"
-if [ -f "${BASH_PROMPT_PATH}" ] && [ -r "${BASH_PROMPT_PATH}" ]; then
-  source "${BASH_PROMPT_PATH}"
-fi
-
-# Profile
-PROFILE_PATH="${HOME}/.profile"
-if [ -f "${PROFILE_PATH}" ] && [ -r "${PROFILE_PATH}" ]; then
-  source "${PROFILE_PATH}"
+# Load interactive configuration for interactive shell.
+if [[ $- == *i* ]]; then
+    source "${HOME}/.bashrc"
 fi
 
 # Check if `ssh-agent` process already running, remove them
