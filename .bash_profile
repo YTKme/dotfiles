@@ -6,7 +6,7 @@ fi
 
 # Load interactive configuration for interactive shell.
 if [[ $- == *i* ]]; then
-    source "${HOME}/.bashrc"
+  source "${HOME}/.bashrc"
 fi
 
 # Check if `ssh-agent` process already running, remove them
