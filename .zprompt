@@ -1,7 +1,3 @@
-###########
-# General #
-###########
-
 # Check Color Terminal
 case "$TERM" in
   xterm-color|*-256color) color_prompt=yes ;;
@@ -12,7 +8,8 @@ esac
 GIT_PS1_SHOWDIRTYSTATE="yes"
 GIT_PS1_SHOWSTASHSTATE="yes"
 GIT_PS1_SHOWUNTRACKEDFILES="yes"
-GIT_PS1_SHOWUPSTREAM="auto verbose"
+#GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWUPSTREAM="verbose"
 # GIT_PS1_STATESEPARATOR=" "
 # GIT_PS1_COMPRESSSPARSESTATE="yes"
 # GIT_PS1_OMITSPARSESTATE="yes"
@@ -63,20 +60,45 @@ STYLE_REVERSE=$'\e[7m'
 STYLE_HIDDEN=$'\e[8m'
 STYLE_DEFAULT=$'\e[22m'
 
-# Prompt
+# Prompt Prefix
 PROMPT_PREFIX="%{${FOREGROUND_GREEN}%}%n" # username
-PROMPT_PREFIX+="%{${FOREGROUND_WHITE}%} at "
+PROMPT_PREFIX+="%{${FOREGROUND_WHITE}%} of "
 PROMPT_PREFIX+="%{${FOREGROUND_GREEN}%}%m" # hostname
 PROMPT_PREFIX+="%{${FOREGROUND_WHITE}%} in "
 PROMPT_PREFIX+="%{${FOREGROUND_CYAN}%}%1~" # basename
 
-PROMPT_SUFFIX=$'\n'
+# Prompt Time Format
+PROMPT_TIME_FORMAT="%Y-%m-%dT%H:%M:%S"
+
+# Prompt Time Right
+# PROMPT_TIME_FORMAT="at %Y-%m-%dT%H:%M:%S"
+# PROMPT_TIME_WIDTH=${(m)#${(%):-"%D{${PROMPT_TIME_FORMAT}}"}}
+# PROMPT_TIME="%{"
+# PROMPT_TIME+=$'\e7'
+# PROMPT_TIME+=$'\e[999C'
+# PROMPT_TIME+=$'\e['"$(( PROMPT_TIME_WIDTH - 1 ))D"
+# PROMPT_TIME+="${FOREGROUND_WHITE}%D{${PROMPT_TIME_FORMAT}}${RESET}"
+# PROMPT_TIME+=$'\e8'
+# PROMPT_TIME+="%}"
+
+# Prompt Time Left
+PROMPT_TIME="%D{${PROMPT_TIME_FORMAT}}"
+
+# Prompt Suffix
+# PROMPT_SUFFIX="%-$(( PROMPT_TIME_WIDTH + 1 ))(l.${PROMPT_TIME}.)"
+PROMPT_SUFFIX="%{${FOREGROUND_WHITE}%} at "
+PROMPT_SUFFIX+="%{${STYLE_DIM}%}${PROMPT_TIME}%{${RESET}%}" # time
+PROMPT_SUFFIX+=$'\n'
 PROMPT_SUFFIX+="%{${FOREGROUND_WHITE}%}%# %{${RESET}%}"
 
 GIT_PROMPT="%%{${FOREGROUND_WHITE}%%} on %%{${RESET}%%}(%s)"
 
 prompt_command() {
-  __git_ps1 "$PROMPT_PREFIX" "$PROMPT_SUFFIX" "$GIT_PROMPT"
+  if (( $+functions[__git_ps1] )); then
+    __git_ps1 "$PROMPT_PREFIX" "$PROMPT_SUFFIX" "$GIT_PROMPT"
+  else
+    PS1="${PROMPT_PREFIX}${PROMPT_SUFFIX}"
+  fi
 }
 
 typeset -ga precmd_functions

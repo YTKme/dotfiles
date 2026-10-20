@@ -6,6 +6,10 @@ fi
 
 # History
 HISTFILE="${HOME}/.zsh_history"
+setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE
+
+# Keep only the first occurrence of each duplicated value for PATH
+typeset -U PATH path
 
 # Alias
 ALIAS_PATH="${HOME}/.config/shell/alias.sh"
@@ -18,10 +22,10 @@ fpath=("${HOME}/.zsh/completion" $fpath)
 autoload -Uz compinit
 compinit
 
-# Git Completion
-GIT_COMPLETION_PATH="/opt/homebrew/etc/bash_completion.d/git-prompt.sh"
-if [ -f "${GIT_COMPLETION_PATH}" ] && [ -r "${GIT_COMPLETION_PATH}" ]; then
-  source "${GIT_COMPLETION_PATH}"
+# Git Prompt
+GIT_PROMPT_PATH="/opt/homebrew/etc/bash_completion.d/git-prompt.sh"
+if [ -f "${GIT_PROMPT_PATH}" ] && [ -r "${GIT_PROMPT_PATH}" ]; then
+  source "${GIT_PROMPT_PATH}"
 fi
 
 # Prompt

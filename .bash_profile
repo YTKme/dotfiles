@@ -1,8 +1,4 @@
-# Environment
-ENVIRONMENT_PATH="${HOME}/.config/shell/env.sh"
-if [ -f "${ENVIRONMENT_PATH}" ] && [ -r "${ENVIRONMENT_PATH}" ]; then
-  source "${ENVIRONMENT_PATH}"
-fi
+# Homebrew
 
 # Load interactive configuration for interactive shell.
 if [[ $- == *i* ]]; then

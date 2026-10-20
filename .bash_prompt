@@ -8,7 +8,8 @@ esac
 GIT_PS1_SHOWDIRTYSTATE="yes"
 GIT_PS1_SHOWSTASHSTATE="yes"
 GIT_PS1_SHOWUNTRACKEDFILES="yes"
-GIT_PS1_SHOWUPSTREAM="auto verbose"
+#GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWUPSTREAM="verbose"
 # GIT_PS1_STATESEPARATOR=" "
 # GIT_PS1_COMPRESSSPARSESTATE="yes"
 # GIT_PS1_OMITSPARSESTATE="yes"
@@ -46,8 +47,19 @@ STYLE_REVERSE="\033[7m"
 STYLE_HIDDEN="\033[8m"
 STYLE_DEFAULT="\033[22m"
 
+# Prompt Time Format
+PROMPT_TIME_FORMAT="%Y-%m-%dT%H:%M:%S"
+
+# Prompt Time Right
+# PROMPT_TIME_SAMPLE="$(date "+${PROMPT_TIME_FORMAT}")"
+# if command -v zsh >/dev/null 2>&1; then
+#   PROMPT_TIME_WIDTH=$(zsh -fc 'print -r -- ${(m)#1}' zsh "$PROMPT_TIME_SAMPLE")
+# else
+#   PROMPT_TIME_WIDTH=${#PROMPT_TIME_SAMPLE}
+# fi
+
 PS1="\[${FOREGROUND_GREEN}\]\u" # username
-PS1+="\[${FOREGROUND_WHITE}\] at "
+PS1+="\[${FOREGROUND_WHITE}\] of "
 PS1+="\[${FOREGROUND_GREEN}\]\h" # hostname
 PS1+="\[${FOREGROUND_WHITE}\] in "
 PS1+="\[${FOREGROUND_CYAN}\]\W" # basename
@@ -56,7 +68,10 @@ PS1+="\$(
   if declare -F __git_ps1 >/dev/null; then
     __git_ps1 '\[${FOREGROUND_WHITE}\] on \[${RESET}\](%s)'
   fi
-) "
+)"
+# PS1+="\[\e7\e[999C\e[$(( PROMPT_TIME_WIDTH - 1 ))D${FOREGROUND_WHITE}\D{${PROMPT_TIME_FORMAT}}${RESET}\e8\]"
+PS1+="\[${FOREGROUND_WHITE}\] at "
+PS1+="\[${STYLE_DIM}\]\D{${PROMPT_TIME_FORMAT}}\[${RESET}\]" # time
 PS1+="\n"
 PS1+="\[${FOREGROUND_WHITE}\]\$ \[${RESET}\]"
 # PS1+="\[${FOREGROUND_WHITE}\]# \[${RESET}\]"
@@ -66,4 +81,3 @@ PS1+="\[${FOREGROUND_WHITE}\]\$ \[${RESET}\]"
 # export PROMPT_COMMAND=prompt_command
 
 PS2="\[${FOREGROUND_GREEN}\]> \[${RESET}\]"
-export PS2
