@@ -1,3 +1,9 @@
+##########
+# Option #
+##########
+
+confirm-close-surface = always
+
 ###########
 # Keybind #
 ###########
