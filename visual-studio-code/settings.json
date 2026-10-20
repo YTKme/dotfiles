@@ -14,5 +14,6 @@
     },
     "[markdown]": {
         "editor.wordWrap": "off"
-    }
+    },
+    "telemetry.telemetryLevel": "crash"
 }
