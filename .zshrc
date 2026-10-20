@@ -1,3 +1,9 @@
+# Environment
+ENVIRONMENT_PATH="${HOME}/.config/shell/env.sh"
+if [ -f "${ENVIRONMENT_PATH}" ] && [ -r "${ENVIRONMENT_PATH}" ]; then
+  source "${ENVIRONMENT_PATH}"
+fi
+
 # Alias
 ALIAS_PATH="${HOME}/.config/shell/alias.sh"
 if [ -f "${ALIAS_PATH}" ] && [ -r "${ALIAS_PATH}" ]; then
