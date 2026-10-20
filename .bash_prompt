@@ -50,11 +50,11 @@ STYLE_REVERSE="\033[7m"
 STYLE_HIDDEN="\033[8m"
 STYLE_DEFAULT="\033[22m"
 
-PS1="\[${FOREGROUND_YELLOW}\]\u" # username
+PS1="\[${FOREGROUND_GREEN}\]\u" # username
 PS1+="\[${FOREGROUND_WHITE}\] at "
-PS1+="\[${FOREGROUND_YELLOW}\]\h" # hostname
+PS1+="\[${FOREGROUND_GREEN}\]\h" # hostname
 PS1+="\[${FOREGROUND_WHITE}\] in "
-PS1+="\[${FOREGROUND_MAGENTA}\]\W" # basename
+PS1+="\[${FOREGROUND_CYAN}\]\W" # basename
 # PS1+="\$(__git_ps1 '\[${FOREGROUND_WHITE}\] on \[${FOREGROUND_CYAN}\]%s') "
 PS1+="\$(__git_ps1 '\[${FOREGROUND_WHITE}\] on \[${RESET}\](%s)') "
 PS1+="\n"
@@ -65,5 +65,5 @@ function prompt_command {
 }
 export PROMPT_COMMAND=prompt_command
 
-PS2="\[${FOREGROUND_YELLOW}\]> \[${RESET}\]"
+PS2="\[${FOREGROUND_GREEN}\]> \[${RESET}\]"
 export PS2
