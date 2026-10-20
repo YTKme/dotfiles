@@ -16,6 +16,7 @@
 # Base
 !base/.bash_aliases
 !base/.bash_profile
+!base/.gitconfig
 !base/.netrc
 !base/.vimrc
 
