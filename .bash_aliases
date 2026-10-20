@@ -1,4 +1,5 @@
 # General
+alias la="ls -a"
 alias ll="ls -l"
 alias lal="ls -al"
 
