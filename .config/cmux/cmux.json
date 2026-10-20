@@ -180,6 +180,7 @@
   //     },
   //     "showModifierHoldHints" : true
   //   },
+
   "actions": {
     "main": {
       "title" : "Main",
@@ -200,6 +201,88 @@
             ]
           },
         },
+      },
+    },
+    "split-two": {
+      "title" : "Split-Two",
+      "type" : "workspace",
+      "workspace" : {
+        "cwd" : "~/Downloads",
+        "layout" : {
+          "children" : [
+            {
+              "pane" : {
+                "surfaces" : [
+                  {
+                    "focus" : true,
+                    "type" : "terminal"
+                  }
+                ]
+              }
+            },
+            {
+              "pane" : {
+                "surfaces" : [
+                  {
+                    "type" : "terminal"
+                  }
+                ]
+              }
+            }
+          ],
+          "direction" : "horizontal",
+          "split" : 0.5
+        },
+        "name" : "Split-Two"
+      },
+    },
+    "split-three": {
+      "title" : "Split-Three",
+      "type" : "workspace",
+      "workspace" : {
+        "color" : "#922B21",
+        "cwd" : "~/Downloads",
+        "layout" : {
+          "children" : [
+            {
+              "pane" : {
+                "surfaces" : [
+                  {
+                    "focus" : true,
+                    "type" : "terminal"
+                  }
+                ]
+              }
+            },
+            {
+              "children" : [
+                {
+                  "pane" : {
+                    "surfaces" : [
+                      {
+                        "type" : "terminal"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "pane" : {
+                    "surfaces" : [
+                      {
+                        "type" : "terminal"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "direction" : "vertical",
+              "split" : 0.5
+            },
+          ],
+          "direction" : "horizontal",
+          "split" : 0.5
+        },
+        "name" : "Split-Three"
       },
     },
   },
