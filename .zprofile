@@ -3,6 +3,7 @@
 ###########
 
 # Completion
+fpath=("${HOME}/.zsh/completion" $fpath)
 autoload -Uz compinit
 compinit
 
