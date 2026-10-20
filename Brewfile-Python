@@ -10,7 +10,11 @@ brew "openssl@3"
 # brew "openssl@4"
 
 # Tool Command Language (Tcl) / ToolKit (Tk)
-brew "tcl-tk"
+brew "tcl-tk@8"
+# brew "tcl-tk"
 
 # XZ
 brew "xz"
+
+# Zstandard (Zstd)
+brew "zstd"

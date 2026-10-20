@@ -10,11 +10,20 @@ brew "git"
 # Optional #
 ############
 
-brew "tmux"
+# General
 brew "tree"
+
+# Development
+brew "nvm"
+brew "herdr"
 
 # Network
 brew "nmap"
+
+# Terminal
+brew ""
+brew "tmux"
+brew "tuios"
 
 # Video
 brew "ffmpeg"
