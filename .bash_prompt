@@ -59,6 +59,7 @@ PS1+="\[${FOREGROUND_MAGENTA}\]\W"
 PS1+="\$(__git_ps1 '\[${FOREGROUND_WHITE}\] on \[${RESET}\]%s') "
 PS1+="\n"
 PS1+="\[${FOREGROUND_WHITE}\]\$ \[${RESET}\]"
+# PS1+="\[${FOREGROUND_WHITE}\]# \[${RESET}\]"
 function prompt_command {
     export PS1
 }
