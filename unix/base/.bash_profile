@@ -2,10 +2,18 @@
 # General #
 ###########
 
+
+# Windows Subsystem for Linux (WSL)
 # .bashrc
-BASHRC_PATH="$HOME/.bashrc"
-if [ -f "$BASHRC_PATH" ]; then
-    source "$BASHRC_PATH"
+# BASHRC_PATH="$HOME/.bashrc"
+# if [ -f "$BASHRC_PATH" ]; then
+#     source "$BASHRC_PATH"
+# fi
+
+# Prompt
+BASH_PROMPT_PATH="$HOME/.bash_prompt"
+if [ -f "$BASH_PROMPT_PATH" ]; then
+    source "$BASH_PROMPT_PATH"
 fi
 
 # Alias
