@@ -2,8 +2,8 @@
 # General #
 ###########
 
-# .bash_profile
-BASH_PROFILE_PATH="${HOME}/.bash_profile"
-if [ -f "${BASH_PROFILE_PATH}" ]; then
-    source "${BASH_PROFILE_PATH}"
+# Profile
+PROFILE_PATH="${HOME}/.bash_profile"
+if [ -f "${PROFILE_PATH}" ] && [ -r "${PROFILE_PATH}" ]; then
+  source "${PROFILE_PATH}"
 fi
