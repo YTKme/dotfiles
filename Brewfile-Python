@@ -1,0 +1,16 @@
+##########
+# Python #
+##########
+
+# GNU Database Manager (GDBM)
+brew "gdbm"
+
+# OpenSSL
+brew "openssl@3"
+# brew "openssl@4"
+
+# Tool Command Language (Tcl) / ToolKit (Tk)
+brew "tcl-tk"
+
+# XZ
+brew "xz"

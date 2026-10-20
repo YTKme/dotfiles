@@ -3,7 +3,7 @@
 ########
 
 brew "bash"
-brew "bash-completion"
+brew "bash-completion@2"
 brew "git"
 
 ############
