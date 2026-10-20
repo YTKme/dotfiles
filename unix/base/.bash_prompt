@@ -56,7 +56,7 @@ PS1+="\[${FOREGROUND_YELLOW}\]\h"
 PS1+="\[${FOREGROUND_WHITE}\] in "
 PS1+="\[${FOREGROUND_MAGENTA}\]\W"
 # PS1+="\$(__git_ps1 '\[${FOREGROUND_WHITE}\] on \[${FOREGROUND_CYAN}\]%s') "
-PS1+="\$(__git_ps1 '\[${FOREGROUND_WHITE}\] on %s') "
+PS1+="\$(__git_ps1 '\[${FOREGROUND_WHITE}\] on \[${RESET}\]%s') "
 PS1+="\[${FOREGROUND_WHITE}\]\$ \[${RESET}\]"
 function prompt_command {
     export PS1
