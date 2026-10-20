@@ -25,6 +25,7 @@
 !.zprofile
 !.zprompt
 !.zsh_prompt
+!.zsh/*
 !.zshenv
 !.zshrc
 
