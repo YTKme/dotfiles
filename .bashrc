@@ -63,3 +63,16 @@ BASH_PROMPT_PATH="${HOME}/.bash_prompt"
 if [ -f "${BASH_PROMPT_PATH}" ] && [ -r "${BASH_PROMPT_PATH}" ]; then
   source "${BASH_PROMPT_PATH}"
 fi
+
+# Local Binary Environment
+LOCAL_BINARY_ENVIRONMENT_PATH="${HOME}/.local/bin/env"
+if [ -f "${LOCAL_BINARY_ENVIRONMENT_PATH}" ] && [ -r "${LOCAL_BINARY_ENVIRONMENT_PATH}" ]; then
+  . "${LOCAL_BINARY_ENVIRONMENT_PATH}"
+fi
+
+# Local Binary Environment
+# . "$HOME/.local/bin/env"
+
+# uv Completion
+# eval "$(uv generate-shell-completion bash)"
+# eval "$(uvx --generate-shell-completion bash)"
