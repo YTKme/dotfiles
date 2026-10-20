@@ -3,6 +3,9 @@ alias la="ls -a"
 alias ll="ls -l"
 alias lal="ls -al"
 
+# Change Directory
+alias cdrepository="cd ${HOME}/Desktop/Project/Repository/"
+
 # Git
 alias glg="git log --all --oneline --graph"
 alias gpra="git pull --rebase --all"
