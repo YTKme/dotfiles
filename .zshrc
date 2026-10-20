@@ -21,6 +21,7 @@ fi
 fpath=("${HOME}/.zsh/completion" $fpath)
 autoload -Uz compinit
 compinit
+zstyle ':completion:*' rehash true
 
 # Git Prompt
 GIT_PROMPT_PATH="/opt/homebrew/etc/bash_completion.d/git-prompt.sh"
@@ -33,3 +34,16 @@ ZSH_PROMPT_PATH="${HOME}/.zprompt"
 if [ -f "${ZSH_PROMPT_PATH}" ] && [ -r "${ZSH_PROMPT_PATH}" ]; then
   source "${ZSH_PROMPT_PATH}"
 fi
+
+# Local Binary Environment
+LOCAL_BINARY_ENVIRONMENT_PATH="${HOME}/.local/bin/env"
+if [ -f "${LOCAL_BINARY_ENVIRONMENT_PATH}" ] && [ -r "${LOCAL_BINARY_ENVIRONMENT_PATH}" ]; then
+  . "${LOCAL_BINARY_ENVIRONMENT_PATH}"
+fi
+
+# Local Binary Environment
+# . "$HOME/.local/bin/env"
+
+# uv Completion
+# eval "$(uv generate-shell-completion zsh)"
+# eval "$(uvx --generate-shell-completion zsh)"
