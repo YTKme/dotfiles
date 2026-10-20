@@ -1,6 +1,6 @@
 # Skip interactive configuration for non-interactive shell.
 case $- in
-    *i*) ;;
+  *i*) ;;
     *) return ;;
 esac
 
@@ -22,7 +22,7 @@ fi
 # Git Completion
 GIT_COMPLETION_PATH="/opt/homebrew/etc/bash_completion.d/git-completion.bash"
 if [ -f "${GIT_COMPLETION_PATH}" ] && [ -r "${GIT_COMPLETION_PATH}" ]; then
-    source "${GIT_COMPLETION_PATH}"
+  source "${GIT_COMPLETION_PATH}"
 fi
 
 # Prompt

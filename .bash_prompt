@@ -60,10 +60,10 @@ PS1+="\$(
 PS1+="\n"
 PS1+="\[${FOREGROUND_WHITE}\]\$ \[${RESET}\]"
 # PS1+="\[${FOREGROUND_WHITE}\]# \[${RESET}\]"
-function prompt_command {
-  export PS1
-}
-export PROMPT_COMMAND=prompt_command
+# function prompt_command {
+#   export PS1
+# }
+# export PROMPT_COMMAND=prompt_command
 
 PS2="\[${FOREGROUND_GREEN}\]> \[${RESET}\]"
 export PS2
