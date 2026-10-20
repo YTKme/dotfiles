@@ -4,6 +4,9 @@ if [ -f "${ENVIRONMENT_PATH}" ] && [ -r "${ENVIRONMENT_PATH}" ]; then
   source "${ENVIRONMENT_PATH}"
 fi
 
+# History
+HISTFILE="${HOME}/.zsh_history"
+
 # Alias
 ALIAS_PATH="${HOME}/.config/shell/alias.sh"
 if [ -f "${ALIAS_PATH}" ] && [ -r "${ALIAS_PATH}" ]; then
