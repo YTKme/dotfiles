@@ -24,7 +24,23 @@
 !unix/base/.vimrc
 
 # etc
-!unix/etc/*
+# nginx
+!unix/etc/nginx/conf.d/localhost-lcl
+# nginx-default
+!unix/etc/nginx-default/fastcgi.conf
+!unix/etc/nginx-default/fastcgi_params
+!unix/etc/nginx-default/koi-utf
+!unix/etc/nginx-default/koi-win
+!unix/etc/nginx-default/mime.types
+!unix/etc/nginx-default/nginx.conf
+!unix/etc/nginx-default/proxy_params
+!unix/etc/nginx-default/scgi_params
+!unix/etc/nginx-default/uwsgi_params
+!unix/etc/nginx-default/win-utf
+!unix/etc/nginx-default/sites-available/default
+!unix/etc/nginx-default/snippets/fastcgi-php.conf
+!unix/etc/nginx-default/snippets/snakeoil.conf
+
 
 # Base pip
 !base/.config/pip/pip.conf
