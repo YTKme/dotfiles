@@ -180,4 +180,27 @@
   //     },
   //     "showModifierHoldHints" : true
   //   },
+  "actions": {
+    "main": {
+      "title" : "Main",
+      "type" : "workspace",
+      "workspace" : {
+        "cwd" : "~/Downloads",
+        "layout" : {
+          "pane" : {
+            "surfaces" : [
+              {
+                "name" : "Base",
+                "type" : "terminal"
+              },
+              {
+                "name" : "Update",
+                "type" : "terminal"
+              },
+            ]
+          },
+        },
+      },
+    },
+  },
 }
