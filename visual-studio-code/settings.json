@@ -15,5 +15,6 @@
     "[markdown]": {
         "editor.wordWrap": "off"
     },
-    "telemetry.telemetryLevel": "crash"
+    "telemetry.telemetryLevel": "crash",
+    "files.eol": "\n"
 }
