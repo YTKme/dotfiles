@@ -3,13 +3,15 @@
 ###########
 
 # .bashrc
-if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
+BASHRC_PATH='~/.bashrc'
+if [ -f "$BASHRC_PATH" ]; then
+    source "$BASHRC_PATH"
 fi
 
 # Alias
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
+BASH_ALIASES_PATH='~/.bash_aliases'
+if [ -f "$BASH_ALIASES_PATH" ]; then
+    source "$BASH_ALIASES_PATH"
 fi
 
 ###########
