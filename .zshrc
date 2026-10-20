@@ -47,3 +47,6 @@ fi
 # uv Completion
 # eval "$(uv generate-shell-completion zsh)"
 # eval "$(uvx --generate-shell-completion zsh)"
+
+# JFrog Command Line Interface
+# source "${HOME}/.jfrog/jfrog_zsh_completion"

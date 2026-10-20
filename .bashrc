@@ -76,3 +76,6 @@ fi
 # uv Completion
 # eval "$(uv generate-shell-completion bash)"
 # eval "$(uvx --generate-shell-completion bash)"
+
+# JFrog Command Line Interface
+# source "${HOME}/.jfrog/jfrog_bash_completion"
