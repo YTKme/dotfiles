@@ -17,6 +17,12 @@ if [ -f "${ALIAS_PATH}" ] && [ -r "${ALIAS_PATH}" ]; then
   source "${ALIAS_PATH}"
 fi
 
+# Path
+PATH_PATH="${HOME}/.config/shell/path.sh"
+if [ -f "${PATH_PATH}" ] && [ -r "${PATH_PATH}" ]; then
+  source "${PATH_PATH}"
+fi
+
 # Completion
 fpath=("${HOME}/.zsh/completion" $fpath)
 autoload -Uz compinit
