@@ -65,9 +65,9 @@ if ! declare -F __git_ps1 >/dev/null && [ -f "${GIT_PROMPT_PATH}" ] && [ -r "${G
 fi
 
 # Prompt
-BASH_PROMPT_PATH="${HOME}/.bash_prompt"
-if [ -f "${BASH_PROMPT_PATH}" ] && [ -r "${BASH_PROMPT_PATH}" ]; then
-  source "${BASH_PROMPT_PATH}"
+PROMPT_PATH="${HOME}/.bash_prompt"
+if [ -f "${PROMPT_PATH}" ] && [ -r "${PROMPT_PATH}" ]; then
+  source "${PROMPT_PATH}"
 fi
 
 # Local Binary Environment
@@ -78,3 +78,11 @@ fi
 
 # Local Binary Environment
 # . "$HOME/.local/bin/env"
+
+# Local Completion
+# LOCAL_COMPLETION_PATH="${HOME}/.local/share/bash-completion/completions"
+# if [[ -d "$LOCAL_COMPLETION_PATH" ]]; then
+#   for completion_file in "$LOCAL_COMPLETION_PATH"/*.bash; do
+#     [[ -f "$completion_file" ]] && [[ -r "$completion_file" ]] && source "$completion_file"
+#   done
+# fi
