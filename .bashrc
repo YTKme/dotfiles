@@ -23,6 +23,12 @@ if [ -f "${ALIAS_PATH}" ] && [ -r "${ALIAS_PATH}" ]; then
   source "${ALIAS_PATH}"
 fi
 
+# Path
+PATH_PATH="${HOME}/.config/shell/path.sh"
+if [ -f "${PATH_PATH}" ] && [ -r "${PATH_PATH}" ]; then
+  source "${PATH_PATH}"
+fi
+
 # Completion Linux
 # if ! shopt -oq posix; then
 #   if [ -r /usr/share/bash-completion/bash_completion ]; then
@@ -59,9 +65,9 @@ if ! declare -F __git_ps1 >/dev/null && [ -f "${GIT_PROMPT_PATH}" ] && [ -r "${G
 fi
 
 # Prompt
-BASH_PROMPT_PATH="${HOME}/.bash_prompt"
-if [ -f "${BASH_PROMPT_PATH}" ] && [ -r "${BASH_PROMPT_PATH}" ]; then
-  source "${BASH_PROMPT_PATH}"
+PROMPT_PATH="${HOME}/.bash_prompt"
+if [ -f "${PROMPT_PATH}" ] && [ -r "${PROMPT_PATH}" ]; then
+  source "${PROMPT_PATH}"
 fi
 
 # Local Binary Environment
@@ -73,9 +79,10 @@ fi
 # Local Binary Environment
 # . "$HOME/.local/bin/env"
 
-# uv Completion
-# eval "$(uv generate-shell-completion bash)"
-# eval "$(uvx --generate-shell-completion bash)"
-
-# JFrog Command Line Interface
-# source "${HOME}/.jfrog/jfrog_bash_completion"
+# Local Completion
+# LOCAL_COMPLETION_PATH="${HOME}/.local/share/bash-completion/completions"
+# if [[ -d "$LOCAL_COMPLETION_PATH" ]]; then
+#   for completion_file in "$LOCAL_COMPLETION_PATH"/*.bash; do
+#     [[ -f "$completion_file" ]] && [[ -r "$completion_file" ]] && source "$completion_file"
+#   done
+# fi

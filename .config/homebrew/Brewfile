@@ -15,16 +15,15 @@ brew "tree"
 
 # Development
 brew "nvm"
-brew "herdr"
 
 # Network
 brew "nmap"
 
 # Terminal
-brew ""
 brew "tmux"
+brew "herdr"
 brew "tuios"
 
 # Video
-brew "ffmpeg"
+# brew "ffmpeg"
 brew "ffmpeg-full"
